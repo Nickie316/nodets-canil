@@ -1,4 +1,4 @@
-// (04) Criando as Rotas e Controllers
+// (05) Separando as Views
 import express  from "express";
 import dotenv from 'dotenv'
 import mustache from 'mustache-express'
@@ -11,7 +11,7 @@ const server = express()
 
 server.set('view engine', 'mustache')
 server.set('views', path.join(__dirname, 'views'))
-server.set('mustache', mustache())
+server.engine('mustache', mustache())
 
 server.use(express.static(path.join(__dirname, '../public')))
 
